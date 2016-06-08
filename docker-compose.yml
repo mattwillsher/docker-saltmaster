@@ -1,11 +1,15 @@
 version: '2'
 services:
-  salt:
+  salt-master:
+    hostname: salt
     build:
       context: ./master
     networks:
       main:
-  minion:
+        aliases:
+          - salt
+  salt-minion:
+    hostname: bob
     build:
       context: ./minion
     networks:

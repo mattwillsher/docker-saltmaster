@@ -5,4 +5,4 @@
 [ -f /etc/salt/master.d/default.conf ] || echo user: salt-master >/etc/salt/master.d/default.conf
 [ -d /etc/salt/pki ] || mkdir /etc/salt/pki && chown salt-master:salt-master /etc/salt/pki
 
-exec salt-master -c /etc/salt
+exec salt-master -c /etc/salt $*

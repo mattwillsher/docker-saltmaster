@@ -13,6 +13,6 @@ run apt-get update && apt-get upgrade -y -o dpkg::options::=--force-confold \
 
 VOLUME [ "/var/cache/salt", "/var/log/salt", "/etc/salt", "/var/run/salt" ]
 
-ONBUILD COPY start.sh /usr/local/bin/start.sh
-ONBUILD RUN chmod +x /usr/local/bin/start.sh || true
-ONBUILD CMD [ "/usr/local/bin/start.sh" ]
+ONBUILD COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+ONBUILD RUN chmod +x /usr/local/bin/entrypoint.sh || true
+ONBUILD ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
