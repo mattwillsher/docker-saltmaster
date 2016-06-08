@@ -15,9 +15,4 @@ VOLUME [ "/var/cache/salt", "/var/log/salt", "/etc/salt", "/var/run/salt" ]
 
 ONBUILD COPY start.sh /usr/local/bin/start.sh
 ONBUILD RUN chmod +x /usr/local/bin/start.sh || true
-
-# Ports
-# EXPOSE 4505 4506
-
-# Run Command
 ONBUILD CMD [ "/usr/local/bin/start.sh" ]

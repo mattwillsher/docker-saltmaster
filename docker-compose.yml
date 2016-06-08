@@ -1,0 +1,15 @@
+version: '2'
+services:
+  salt:
+    build:
+      context: ./master
+    networks:
+      main:
+  minion:
+    build:
+      context: ./minion
+    networks:
+      main:
+
+networks:
+  main:
